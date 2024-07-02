@@ -1,37 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './home'
+import Login from './login'
+import './App.css'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [currentTime, setCurrentTime] = useState('Fetching time...');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetchTime();
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const fetchTime = () => {
-    axios.get('http://localhost:8080/api/time')
-      .then(response => {
-        setCurrentTime(response.data.trim());
-      })
-      .catch(error => {
-        console.error('Error fetching time:', error);
-        setCurrentTime('Error fetching time');
-      });
-  };
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState('')
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Current Time from Spring Boot</h1>
-        <p>{currentTime}</p>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+          />
+          <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
