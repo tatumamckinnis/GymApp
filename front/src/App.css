@@ -61,3 +61,9 @@
   border: 1px solid grey;
   padding-left: 8px;
 }
+
+.inputField {
+  width: 300px; /* Adjust width as needed */
+  padding: 10px; /* Add padding for better spacing */
+  margin-bottom: 10px; /* Add margin to separate input fields */
+}
