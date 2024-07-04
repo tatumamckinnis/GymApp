@@ -10,7 +10,7 @@ function FindBuddy() {
             <input
               className="inputButton"
               type="button"
-              onClick={navigate("/")}
+              onClick={() => {navigate("/login")}}
               value="Back Home"
               style={{ fontSize: '3.0em', padding: '15px 25px', marginTop: '20px' }}
             />
