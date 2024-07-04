@@ -21,7 +21,7 @@ const Home = ({ loggedIn, email }) => {
 
   const handleLoginSubmit = () => {
     // Example authentication logic goes here...
-    navigate('/dashboard'); // Navigate to dashboard or update loggedIn state on successful login
+    navigate('/userhome'); // Navigate to user homepage or update loggedIn state on successful login
   };
 
   return (
