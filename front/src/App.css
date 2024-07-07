@@ -73,8 +73,8 @@
   width: 260px; /* Ensure the width is equal to the height */
   height: 260px; /* This is already set */
   border-radius: 50%; /* This makes the button round */
-  background-color: #6879D0;
-  color: #FCF7E5; /* Example text color */
+  background-color: cornflowerblue;
+  color: white; /* Example text color */
   border: none; /* Remove default border */
   cursor: pointer; /* Change cursor to pointer */
   font-size: 1.5em; /* Example font size */
