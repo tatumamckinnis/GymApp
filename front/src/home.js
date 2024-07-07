@@ -25,10 +25,10 @@ const Home = ({ loggedIn, email }) => {
   };
 
   return (
-    <div className="mainContainer">
+    <div className="mainContainer" style={{ backgroundColor: "#003087", color: 'white', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className="contentContainer">
         {!showLoginForm && (
-          <div className="titleContainer">
+          <div className="titleContainer" style={{ textAlign: 'center' }}>
             <div>Welcome!</div>
             <div style={{ fontSize: '0.8em', textAlign: 'center', marginTop: '10px' }}>
               Need help finding a fitness buddy?
@@ -36,7 +36,7 @@ const Home = ({ loggedIn, email }) => {
           </div>
         )}
         {!showLoginForm && (
-          <div className="buttonContainer">
+          <div className="buttonContainer" style={{ textAlign: 'center' }}>
             <input
               className="inputButton"
               type="button"
