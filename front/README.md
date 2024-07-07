@@ -25,7 +25,11 @@
    ```sh
    mvn spring-boot:run
    ```
-7) Run the frontend.
+7) Switch to frontend folder.
+   ```sh
+   cd front
+   ```
+8) Run the frontend.
    ```shell
     npm start
     ```
