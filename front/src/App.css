@@ -67,3 +67,27 @@
   padding: 10px; /* Add padding for better spacing */
   margin-bottom: 10px; /* Add margin to separate input fields */
 }
+
+.specialButton {
+  align-items: center;
+  width: 260px; /* Ensure the width is equal to the height */
+  height: 260px; /* This is already set */
+  border-radius: 50%; /* This makes the button round */
+  background-color: cornflowerblue;
+  color: white; /* Example text color */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 1.5em; /* Example font size */
+  box-shadow: 2px 2px 4px rgba(0, 0, 30, 0.2);
+}
+
+.newButton {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button */
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.userName {
+  text-align: center;
+}

@@ -67,6 +67,10 @@ const Home = ({ loggedIn, email }) => {
   };
 
   const handleLoginSubmit = () => {
+    
+    // Example authentication logic goes here...
+    navigate('/userhome'); // Navigate to user homepage or update loggedIn state on successful login
+    
     setEmailError('');
     setPasswordError('');
     setAuthError('');
@@ -91,6 +95,7 @@ const Home = ({ loggedIn, email }) => {
   const handleCreateAccountSubmit = () => {
     // Handle account creation logic here...
     navigate('/account-created');
+    
   };
 
   return (
