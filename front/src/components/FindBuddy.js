@@ -6,11 +6,10 @@ const FindBuddy = () => {
   const [selectedWorkout, setSelectedWorkout] = useState('');
   const [buddies, setBuddies] = useState([]);
 
-  // Function to handle form submission
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // Replace with logic to fetch buddies based on selected workout
-    // For now, let's mock some buddies
+  
     const mockBuddies = [
       { id: 1, name: 'Name1', email: 'name1@example.com' },
       { id: 2, name: 'Name2', email: 'name2@example.com' }
