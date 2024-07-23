@@ -1,6 +1,6 @@
-// src/components/Buddies.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../App.css'; // Import the CSS file
 
 const Buddies = ({ userId }) => {
     const [buddies, setBuddies] = useState([]);
@@ -16,11 +16,13 @@ const Buddies = ({ userId }) => {
     }, [userId]);
 
     return (
-        <div>
+        <div className="find-buddy-container">
             <h2>Your Gym Buddies</h2>
-            <ul>
+            <ul className="buddies-list">
                 {buddies.map(buddy => (
-                    <li key={buddy.id}>{buddy.email}</li>
+                    <li className="buddy-item" key={buddy.id}>
+                        {buddy.email}
+                    </li>
                 ))}
             </ul>
         </div>

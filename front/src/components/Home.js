@@ -1,6 +1,6 @@
-// Home.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../App.css'; // Import the CSS file
 
 const Home = ({ loggedIn, email, setLoggedIn, setEmail }) => {
   const navigate = useNavigate();
@@ -21,67 +21,59 @@ const Home = ({ loggedIn, email, setLoggedIn, setEmail }) => {
   };
 
   const handleLoginSubmit = () => {
-    setLoggedIn(true); 
-    setEmail(inputEmail); 
-    navigate('/userhome'); 
+    setLoggedIn(true);
+    setEmail(inputEmail);
+    navigate('/userhome');
   };
 
   return (
-    <div className="mainContainer" style={{ backgroundColor: "#003087", color: 'white', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div className="contentContainer">
+    <div className="main-container">
+      <div className="content-container">
         {!loggedIn && !showLoginForm && (
-          <div className="titleContainer" style={{ textAlign: 'center'}}>
-            <div>Welcome!</div>
-            <div style={{ fontSize: '1.5em', textAlign: 'center', marginTop: '10px', fontWeight: 'bold' }}>
-              Need help finding a fitness buddy?
-            </div>
-            <div style={{ fontSize: '1.2em', marginTop: '20px', textAlign: 'center' }}>
-              <input
-                className="inputButton"
-                type="button"
+          <div className="title-container">
+            <h1>Welcome!</h1>
+            <h2 className="subtitle">Need help finding a fitness buddy?</h2>
+            <div className="login-button-container">
+              <button
+                className="input-button"
                 onClick={handleLoginButtonClick}
-                value="Log in"
-                style={{ fontSize: '1.2em', padding: '10px 20px', backgroundColor: '#005BB5', color: 'white', border: 'none', borderRadius: '5px' }}
-              />
+              >
+                Log in
+              </button>
             </div>
           </div>
         )}
         {showLoginForm && (
-          <div className="loginFormContainer" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2.0em', marginBottom: '15px', fontWeight: 'bold' }}>Log In Here</div>
-            <div style={{ fontSize: '1.5em', marginBottom: '25px' }}>Enter username and password below.</div>
+          <div className="login-form-container">
+            <h2 className="form-title">Log In Here</h2>
+            <p className="form-subtitle">Enter username and password below.</p>
             <input
               type="text"
-              className="inputField"
+              className="input-field"
               value={inputEmail}
               onChange={handleEmailChange}
               placeholder="Enter your email"
-              style={{ marginBottom: '10px', width: '300px', padding: '10px' }}
             />
-            <br />
             <input
               type="password"
-              className="inputField"
+              className="input-field"
               value={inputPassword}
               onChange={handlePasswordChange}
               placeholder="Enter your password"
-              style={{ marginBottom: '10px', width: '300px', padding: '10px' }}
             />
-            <br />
-            <input
-              className="inputButton"
-              style={{ display: 'block', margin: '0 auto', fontSize: '1.2em', padding: '10px 20px' }}
-              type="button"
+            <button
+              className="input-button"
               onClick={handleLoginSubmit}
-              value="Submit"
-            />
+            >
+              Submit
+            </button>
           </div>
         )}
         {loggedIn && (
-          <div className="loggedInContainer" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '2.0em', marginBottom: '15px', fontWeight: 'bold' }}>Welcome, {email}!</div>
-            <div style={{ fontSize: '1.5em', marginBottom: '25px' }}>You are now logged in.</div>
-            <Link to="/findbuddy" style={{ color: 'white', fontSize: '1.2em', padding: '10px 20px', backgroundColor: '#005BB5', borderRadius: '5px', textDecoration: 'none' }}>Find a Buddy</Link>
+          <div className="logged-in-container">
+            <h2 className="logged-in-title">Welcome, {email}!</h2>
+            <p className="logged-in-subtitle">You are now logged in.</p>
+            <Link to="/findbuddy" className="input-button">Find a Buddy</Link>
           </div>
         )}
       </div>
@@ -90,3 +82,4 @@ const Home = ({ loggedIn, email, setLoggedIn, setEmail }) => {
 };
 
 export default Home;
+

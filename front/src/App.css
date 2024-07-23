@@ -1,93 +1,228 @@
-.mainContainer {
-  flex-direction: column;
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f4f4f4; /* Light background color for the whole page */
+  color: #333; /* Darker text color for better readability */
+}
+
+/* Utility Classes */
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Main Container */
+.main-container {
   height: 100vh;
-}
-
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  font-size: 64px;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-}
-
-.resultContainer,
-.historyItem {
-  flex-direction: row;
-  display: flex;
-  width: 400px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.historyContainer {
-  flex-direction: column;
-  display: flex;
-  height: 200px;
-  align-items: center;
-  flex-grow: 5;
-  justify-content: flex-start;
-}
-
-.buttonContainer {
+  background-color: #003087; /* Blue background color */
+  color: #fff; /* White text color */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 260px;
+  padding: 20px; /* Added padding for better spacing */
 }
 
-.inputContainer {
+/* Content Container */
+.content-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-.inputContainer > .errorLabel {
-  color: red;
-  font-size: 12px;
+/* Title Container */
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.inputBox {
-  height: 48px;
-  width: 400px;
-  font-size: large;
+.title-container h1 {
+  font-size: 2.5em; /* Responsive font size */
+  font-weight: bold;
+  margin: 0;
+}
+
+.title-container .subtitle {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Button Styles */
+.input-button {
+  border: none;
   border-radius: 8px;
-  border: 1px solid grey;
-  padding-left: 8px;
+  color: white;
+  cursor: pointer;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.inputField {
-  width: 300px; /* Adjust width as needed */
-  padding: 10px; /* Add padding for better spacing */
-  margin-bottom: 10px; /* Add margin to separate input fields */
+.input-button:hover {
+  background-color: #004a8d; /* Darker shade on hover */
 }
 
-.specialButton {
-  align-items: center;
-  width: 260px; /* Ensure the width is equal to the height */
-  height: 260px; /* This is already set */
-  border-radius: 50%; /* This makes the button round */
+.input-button.success {
+  background-color: #28a745; /* Success color */
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Light up effect */
+}
+
+.input-button.success:hover {
+  background-color: #218838; /* Darker shade on hover */
+}
+
+.home-button {
+  font-size: 1.5em; /* Larger font size for home button */
+  padding: 14px 28px; /* Larger padding for home button */
+}
+
+/* Special Button Styles */
+.special-button {
   background-color: cornflowerblue;
-  color: white; /* Example text color */
-  border: none; /* Remove default border */
-  cursor: pointer; /* Change cursor to pointer */
-  font-size: 1.5em; /* Example font size */
+  width: auto; /* Automatic width */
+  height: auto; /* Automatic height */
+  border-radius: 8px; /* Square corners */
+  font-size: 1.5em;
+  padding: 14px 28px; /* Button padding */
   box-shadow: 2px 2px 4px rgba(0, 0, 30, 0.2);
 }
 
-.newButton {
-  display: flex;
-  justify-content: center; /* Horizontally center the button */
-  align-items: center; /* Vertically center the button */
-  height: 100vh; /* Adjust the height as needed */
+.special-button:hover {
+  background-color: #1e90ff; /* Slightly lighter on hover */
 }
 
-.userName {
+/* Input Fields */
+.input-field {
+  width: 300px; /* Consistent width */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd; /* Light border color */
+  font-size: 1em;
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Error Label */
+.error-label {
+  color: #d9534f; /* Bootstrap red color for errors */
+  font-size: 0.875em;
+}
+
+/* Container Styles */
+.button-container,
+.input-container,
+.history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  height: auto; /* Adjust height based on content */
+  margin-top: 20px; /* Added margin for spacing */
+}
+
+.input-container {
+  width: 100%; /* Full width */
+}
+
+.history-container {
+  height: auto; /* Adjust height based on content */
+  margin-top: 20px; /* Added margin for spacing */
+}
+
+.result-container,
+.history-item {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.user-name {
   text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Login Page Styles */
+.login-form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-form-container h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.login-form-container .form-subtitle {
+  margin: 0 0 20px;
+  font-size: 1.2em;
+}
+
+.login-form-container .input-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* User Home Styles */
+.user-welcome {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container .input-button {
+  font-size: 1.5em; /* Larger font size for button */
+  padding: 14px 28px; /* Larger padding for button */
+}
+
+/* Find Buddy Page Styles */
+.find-buddy-container {
+  background-color: #003087; /* Blue background color */
+  color: #fff; /* White text color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.find-buddy-container h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.find-buddy-container .input-field {
+  width: 300px; /* Consistent width */
+}
+
+.find-buddy-container .input-button {
+  padding: 12px 24px;
+  margin-top: 10px;
+  font-size: 1.2em;
+  background-color: #005BB5; /* Button color */
+}
+
+.find-buddy-container .input-button:hover {
+  background-color: #004a8d; /* Darker shade on hover */
 }

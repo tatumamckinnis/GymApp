@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css'; // Import the CSS file
 
 const FindBuddy = () => {
   const [selectedWorkout, setSelectedWorkout] = useState('');
@@ -18,17 +19,20 @@ const FindBuddy = () => {
   };
 
   return (
-    <div className="mainContainer" style={{ backgroundColor: "#003087", color: 'white', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <div className="contentContainer">
-        <div className="titleContainer" style={{ textAlign: 'center'}}>
-          <div>Find a Fitness Buddy</div>
-          <div style={{ fontSize: '1.5em', textAlign: 'center', marginTop: '10px', fontWeight: 'bold' }}>
-            Select your preferred workout to find buddies
-          </div>
+    <div className="find-buddy-container">
+      <div className="find-buddy-content">
+        <div className="find-buddy-title">
+          <h1>Find a Fitness Buddy</h1>
+          <h2>Select your preferred workout to find buddies</h2>
         </div>
-        <form onSubmit={handleFormSubmit} style={{ marginTop: '20px', textAlign: 'center' }}>
-          <label htmlFor="workoutSelect" style={{ fontSize: '1.2em', marginRight: '10px' }}>Select Workout:</label>
-          <select id="workoutSelect" value={selectedWorkout} onChange={(e) => setSelectedWorkout(e.target.value)} style={{ fontSize: '1.2em', padding: '10px' }}>
+        <form className="find-buddy-form" onSubmit={handleFormSubmit}>
+          <label htmlFor="workoutSelect">Select Workout:</label>
+          <select
+            id="workoutSelect"
+            value={selectedWorkout}
+            onChange={(e) => setSelectedWorkout(e.target.value)}
+            className="input-field"
+          >
             <option value="">Select</option>
             <option value="legs">Legs</option>
             <option value="arms">Arms</option>
@@ -36,15 +40,14 @@ const FindBuddy = () => {
             <option value="cardio">Cardio</option>
             <option value="yoga">Yoga</option>
           </select>
-          <br />
-          <button type="submit" className="inputButton" style={{ fontSize: '1.2em', padding: '10px 20px', marginTop: '10px', backgroundColor: '#005BB5', color: 'white', border: 'none', borderRadius: '5px' }}>Find Buddies</button>
+          <button type="submit" className="input-button">Find Buddies</button>
         </form>
         {buddies.length > 0 && (
-          <div className="buddiesContainer" style={{ marginTop: '20px', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.5em', fontWeight: 'bold', marginBottom: '10px' }}>Matching Buddies:</div>
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <div className="buddies-container">
+            <h2>Matching Buddies:</h2>
+            <ul className="buddies-list">
               {buddies.map(buddy => (
-                <li key={buddy.id} style={{ marginBottom: '10px' }}>
+                <li className="buddy-item" key={buddy.id}>
                   <div>Name: {buddy.name}</div>
                   <div>Email: {buddy.email}</div>
                 </li>
@@ -52,8 +55,8 @@ const FindBuddy = () => {
             </ul>
           </div>
         )}
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
-          <Link to="/" style={{ color: 'white', marginRight: '20px' }}>Home</Link>
+        <div className="link-container">
+          <Link to="/" className="home-link">Home</Link>
         </div>
       </div>
     </div>
@@ -61,6 +64,7 @@ const FindBuddy = () => {
 };
 
 export default FindBuddy;
+
 
 
 
